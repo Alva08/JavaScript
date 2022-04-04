@@ -2,8 +2,17 @@
 let carrito = [];
 const botonComprar = document.querySelectorAll(".btn");
 const listaCarrito = document.querySelector(".carrito");
-const botonBorrar = document.querySelector(".btnBorrar"); 
+const botonBorrar = document.querySelector(".btnBorrar");
+const ComprarCarrito = document.querySelector(".btnComprar");
 
+ComprarCarrito.addEventListener("click" , ()=>{
+    Swal.fire({
+        icon: 'success', 
+        title: 'Haz realizado la compra con exito',
+      })
+        borrarCarrito();
+        sumarTotal();
+})
 
 botonComprar.forEach( btn => {
     btn.addEventListener("click", agregarCarrito);
